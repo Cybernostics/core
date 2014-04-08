@@ -89,9 +89,7 @@ var Files = {
 	 */
 	isFileNameValid: function (name, root) {
 		var trimmedName = name.trim();
-		if (trimmedName === '.'
-				|| trimmedName === '..'
-				|| (root === '/' &&  trimmedName.toLowerCase() === 'shared'))
+		if (trimmedName === '.'	|| trimmedName === '..')
 		{
 			throw t('files', '"{name}" is an invalid file name.', {name: name});
 		} else if (trimmedName.length === 0) {

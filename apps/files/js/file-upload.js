@@ -542,8 +542,6 @@ OC.Upload = {
 					throw t('files', 'URL cannot be empty');
 				} else if (type !== 'web' && !Files.isFileNameValid(filename)) {
 					// Files.isFileNameValid(filename) throws an exception itself
-				} else if (FileList.getCurrentDirectory() === '/' && filename.toLowerCase() === 'shared') {
-					throw t('files', 'In the home folder \'Shared\' is a reserved filename');
 				} else if (FileList.inList(filename)) {
 					throw t('files', '{new_name} already exists', {new_name: filename});
 				} else {
