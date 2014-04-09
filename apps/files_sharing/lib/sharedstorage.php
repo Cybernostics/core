@@ -151,7 +151,7 @@ class Shared extends \OC\Files\Storage\Common {
 
 	public function is_dir($path) {
 		if ($path == '' || $path == '/') {
-			return true;
+			$path = $this->mountPoint;
 		} else if ($source = $this->getSourcePath($path)) {
 			list($storage, $internalPath) = \OC\Files\Filesystem::resolvePath($source);
 			return $storage->is_dir($internalPath);
